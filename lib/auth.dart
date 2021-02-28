@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+//import 'package:firebase_auth/firebase_auth.dart';
 import 'buttonpage.dart';
-import 'package:firebase_core/firebase_core.dart';
+//import 'package:firebase_core/firebase_core.dart';
 
 void main() {
   runApp(Home());
@@ -29,11 +29,11 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  FirebaseAuth auth = FirebaseAuth.instance;
-  final TextEditingController em = new TextEditingController();
-  final TextEditingController ps = new TextEditingController();
+  //FirebaseAuth auth = FirebaseAuth.instance;
+  //final TextEditingController em = new TextEditingController();
+  //final TextEditingController ps = new TextEditingController();
 
-  void fireauth() async {
+  /*void fireauth() async {
     await Firebase.initializeApp();
     final User user = (await auth.createUserWithEmailAndPassword(
             email: em.text, password: ps.text))
@@ -45,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => LedApp()));
     }
-  }
+  }*/
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,9 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               RaisedButton(
                 onPressed: () async {
-                  fireauth();
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => ButtonApp()));
+                  //fireauth();
                 },
                 child: Text('REGISTER'),
                 color: Colors.lightBlue[800],

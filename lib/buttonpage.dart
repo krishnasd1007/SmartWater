@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'chatpage.dart';
 import 'package:http/http.dart' as http;
-import 'login.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,18 +15,18 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: LedApp(),
+      home: ButtonApp(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
-class LedApp extends StatefulWidget {
+class ButtonApp extends StatefulWidget {
   @override
-  _LedAppState createState() => _LedAppState();
+  _ButtonAppState createState() => _ButtonAppState();
 }
 
-class _LedAppState extends State<LedApp> {
+class _ButtonAppState extends State<ButtonApp> {
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -59,15 +58,6 @@ class _LedAppState extends State<LedApp> {
                   child: Text('ON/OFF'),
                   color: Colors.lightBlue[800],
                 ),
-                //Padding(padding: EdgeInsets.all(15.0)),
-                FlatButton(
-                  onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => LoginPage()));
-                  },
-                  child: Text('LOGOUT'),
-                  color: Colors.lightBlue[800],
-                )
               ],
             ),
           ),
